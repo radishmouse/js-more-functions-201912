@@ -99,7 +99,7 @@ let filteredExpenses = onlyOverTwentyDollars(expenses);
 // "Gandolf function"
 
 function isOverTwentyDollars(cost) {
-    debugger;
+    // debugger;
     if (cost >= 20) {
         return true;
     } else {
@@ -109,3 +109,68 @@ function isOverTwentyDollars(cost) {
 
 // #2. Declare a variable to hold our new, filtered array.
 let highExpenses = expenses.filter(isOverTwentyDollars);
+
+function makeTurkey() {
+    return "🦃";
+}
+
+const friendsToFeed = [
+    "Joe",
+    "Eva",
+    "Aylor"
+];
+
+const meals = friendsToFeed.map(makeTurkey);
+
+
+function firecracker() {
+    return "🧨";
+}
+
+const redneckFriends = [
+    "Jonathan",
+    "Tedge"
+];
+
+gifts = redneckFriends.map(firecracker);
+
+function myMap(anArray, helperFn) {
+    // What is the job of .map?
+    // #1. Creates a new, empty array
+    const newArray = [];
+
+    // #2. Iterates through each element of `anArray`
+    for (let element of anArray) {
+        // #3. For each element, call `helperFn` and pass it
+        // the element
+        const result = helperFn(element); // <==== a little weird.
+    
+        // #4. .push the result (from step #3) into the new array
+        newArray.push(result);
+    }
+
+    // #5 return the new array
+    return newArray;
+}
+
+function myFilter(anArray, helperFn) {
+    
+    // #1. Create new, empty array
+    const newArray = [];
+
+    // #2. Iterate through anArray
+    for (let element of anArray) {
+        // #3. For each element, call
+        // helperFn and pass it the element
+        const isCool = helperFn(element);
+
+        // #4. If the helperFn returned true,
+        // push the element into new Array
+        if (isCool) {
+            newArray.push(element);
+        }
+    }
+
+    // #5 return the new array
+    return newArray;
+}
