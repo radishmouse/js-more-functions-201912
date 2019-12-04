@@ -78,6 +78,11 @@ function discountExpense(singleExpense) {
 let updatedExpenses = expenses.map(discountExpense);
 
 
+
+
+
+
+
 function onlyOverTwentyDollars(expenseArray) {
     let newArray = [];
 
@@ -109,6 +114,11 @@ function isOverTwentyDollars(cost) {
 
 // #2. Declare a variable to hold our new, filtered array.
 let highExpenses = expenses.filter(isOverTwentyDollars);
+
+
+
+
+
 
 function makeTurkey() {
     return "🦃";
@@ -174,3 +184,36 @@ function myFilter(anArray, helperFn) {
     // #5 return the new array
     return newArray;
 }
+
+function add(runningTotal, aNumber) {
+    // const runningTotal = ???;
+    return runningTotal + aNumber;
+}
+
+function myReduce(anArray, helperFn, starterValue) {
+    // #0. Expect to receive a starter value.
+    // OR: Set the starter value to the [0]
+    // item of the array, and start the loop at [1]
+
+    // #1. Create a variable that we'll use
+    // to store our work.
+    let cumulativeResult = starterValue; 
+    // undefined is the value of
+    // a variable that was never assigned.
+
+    // #2. Iterate through the array that was passed in.
+    for (let item of anArray) {
+        // #3. Apply the helperFn to the item
+        // debugger;
+        cumulativeResult = helperFn(cumulativeResult, item);
+        
+        // #4. ???
+        // There is no step 4!
+    }
+
+    // #5. Return the cumulativeResult
+    return cumulativeResult;
+}
+
+let result1 = myReduce(expenses, add, 0);
+let result2 = expenses.reduce(add, 0);
